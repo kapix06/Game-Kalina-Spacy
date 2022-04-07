@@ -2,7 +2,8 @@ const game = new Game()
 const player = new Player()
 
 function setup() {
-createCanvas(1300, 500);
+createCanvas(windowWidth, 400);
+
 }
 
 function preload() {
@@ -14,6 +15,12 @@ game.draw();
 }
 
 function keyPressed() {
-game.player.keyPressed();  
+    if ( keyCode === 32 ) {
+        player.shoot()    
+        }   
 }
+
+
+
+
 
