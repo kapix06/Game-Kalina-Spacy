@@ -36,15 +36,26 @@ padding: 0;
 display: flex;
 justify-content: center;
 flex-direction: column;
-border: 2px solid white;
+
 align-self: center;
 height: 70px;
 width: 70px;
 text-align: center;
 margin: 0;
 padding: 0;
+color: purple;
+font-size: 22px;
+font-weight: 10px;
 }
 
+.box img {
+height: 35px;
+align-self: center;
+}
+
+
 h2 {
-height: 5px;   
+height: 2px;   
+font-size: 18px;
+font-style: italic;
 }

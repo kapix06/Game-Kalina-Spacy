@@ -61,26 +61,25 @@ if (dist(this.lasers[i].x , this.lasers[i].y , this.asteroids[j].x , this.astero
 
 // Game Won - if score > 10
 
-if (this.score > 5 ) {
-image(game.winGif, 100, 100, 50, 50);
+if (this.score > 15 ) {
 
-
-/*fill(0);
-rect(400,0,600,600);
+fill(0);
+rect(280,0,800,600);
 fill(227, 101, 91);
 textSize(50);
 textAlign(CENTER);
-text("You Win",200, 200);
+text("You Win",700, 200);
 textSize(12);
-textAlign(CENTER); */
+textAlign(CENTER); 
 }
 
 // Game lost :  Player touches asteroids => GAME OVER
 
 for (let j=0; j < this.asteroids.length; j++) {
-if (dist(this.player.x , this.player.y , this.asteroids[j].x , this.asteroids[j].y ) < 40 ) {
+if (dist(this.player.x , this.player.y , this.asteroids[j].x , this.asteroids[j].y ) < 30 ) {
+this.asteroids.splice(j, 1);
 image(game.zombieImage.src, 650, 120, 90, 130);
-this.lives -= 1; 
+this.lives -- ; 
 document.querySelector('.lives-display').innerHTML = this.lives; 
 
 }
