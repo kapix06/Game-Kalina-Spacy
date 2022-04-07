@@ -13,6 +13,9 @@ this.deathStar
 this.asteroids = []
 this.lasers = []
 this.score = 0;
+this.winGif
+//this.createwinGif
+
 
 this.counterDisplay = document.querySelector('.counter-display');
 }
@@ -26,7 +29,7 @@ this.player.draw()
 //this.laser.draw()
 
 // Asteroids flying by
-if (frameCount % 90 === 0) {
+if (frameCount % 80 === 0) {
     this.asteroids.push(new Asteroid(this.asteroidImage))   
 }
 
@@ -56,6 +59,27 @@ if (dist(this.lasers[i].x , this.lasers[i].y , this.asteroids[j].x , this.astero
     } 
 }
 }
+
+// Game Won - if score = 10
+
+if (this.score > 5 ) {
+
+//image(this.winGif, 50, 50, 50, 50);
+this.createwinGif.position(50, 50);
+
+
+
+/*fill(0);
+rect(400,0,600,600);
+fill(227, 101, 91);
+textSize(50);
+textAlign(CENTER);
+text("You Win",200, 200);
+textSize(12);
+textAlign(CENTER); */
+}
+
+// Game lost - if ...
 
 
 // is Player  touches asteroids // player dies and loose a life
@@ -95,6 +119,8 @@ this.playerImage = loadImage('../img/image.player/vaisseauspatial.png')
 
 this.asteroidImage = { src : loadImage ('../img/images.obst/asteroid-meteor-orangered-transp-space-stock-514777.png')}
 
+this.winGif = loadImage('https://media.giphy.com/media/w3J7mstYCISqs/giphy.gif')
+//this.createwinGif = createImg('https://media.giphy.com/media/w3J7mstYCISqs/giphy.gif')
 }
 
 }

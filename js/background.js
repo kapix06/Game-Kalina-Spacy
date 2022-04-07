@@ -22,17 +22,24 @@ image(game.deathStar.src, game.deathStar.x, game.deathStar.y + height, 200, 200)
 if (game.deathStar.y <= - height - 200) {
     game.deathStar.x = random(1200)
     game.deathStar.y = random(height, 800)
-
 }
 
-game.zombieImage.x -= game.zombieImage.speed
+
+/*
+this.dir = p5.Vector.random2D() ;
+image(game.zombieImage.src, game.zombieImage.this.dir.mult(random(200)),
+ game.zombieImage.this.dir.mult(random(200)), 60, 90)   
+
+*/
+
+/*game.zombieImage.x -= game.zombieImage.speed
 image(game.zombieImage.src, game.zombieImage.x + width, game.zombieImage.y, 60, 90)   
 
 if (game.zombieImage.x <= - width -100) {
-    game.zombieImage.y = random(-50, 50)
-    game.zombieImage.x = random(width, 1500)
+    game.zombieImage.y = (Math.random() * 800) / 2.5
+    game.zombieImage.x = (Math.random() * 1400) / 2.5
     
-}
+}*/
 
 
 
