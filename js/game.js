@@ -13,8 +13,8 @@ this.deathStar
 this.asteroids = []
 this.lasers = []
 this.score = 0;
+this.lives = 10;
 this.winGif
-//this.createwinGif
 
 
 this.counterDisplay = document.querySelector('.counter-display');
@@ -26,7 +26,6 @@ clear()
 
 this.background.draw()
 this.player.draw()
-//this.laser.draw()
 
 // Asteroids flying by
 if (frameCount % 80 === 0) {
@@ -60,13 +59,10 @@ if (dist(this.lasers[i].x , this.lasers[i].y , this.asteroids[j].x , this.astero
 }
 }
 
-// Game Won - if score = 10
+// Game Won - if score > 10
 
 if (this.score > 5 ) {
-
-//image(this.winGif, 50, 50, 50, 50);
-this.createwinGif.position(50, 50);
-
+image(game.winGif, 100, 100, 50, 50);
 
 
 /*fill(0);
@@ -79,22 +75,16 @@ textSize(12);
 textAlign(CENTER); */
 }
 
-// Game lost - if ...
+// Game lost :  Player touches asteroids => GAME OVER
 
+for (let j=0; j < this.asteroids.length; j++) {
+if (dist(this.player.x , this.player.y , this.asteroids[j].x , this.asteroids[j].y ) < 40 ) {
+image(game.zombieImage.src, 650, 120, 90, 130);
+this.lives -= 1; 
+document.querySelector('.lives-display').innerHTML = this.lives; 
 
-// is Player  touches asteroids // player dies and loose a life
-
-
-
-/*this.asteroids = this.asteroids.filter(asteroid => {
-    if (asteroid.collision(lasers[i]) || asteroid.x < 0) {
-        return false
-    } else {
-        return true
-    }
-})*/
-
-
+}
+}
 }
 
 
@@ -119,8 +109,7 @@ this.playerImage = loadImage('../img/image.player/vaisseauspatial.png')
 
 this.asteroidImage = { src : loadImage ('../img/images.obst/asteroid-meteor-orangered-transp-space-stock-514777.png')}
 
-this.winGif = loadImage('https://media.giphy.com/media/w3J7mstYCISqs/giphy.gif')
-//this.createwinGif = createImg('https://media.giphy.com/media/w3J7mstYCISqs/giphy.gif')
+this.winGif = loadImage('../img/images.obst/giphycat.gif')
 }
 
 }

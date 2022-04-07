@@ -44,10 +44,6 @@ game.lasers.push(new Laser(game.player))
 
 }
 
-//nested Loop // x / y if there is a collision 
-
- // when keyPressed, then adds a laser to the laser array   
-
 
 
 
