@@ -78,7 +78,7 @@ textAlign(CENTER);
 for (let j=0; j < this.asteroids.length; j++) {
 if (dist(this.player.x , this.player.y , this.asteroids[j].x , this.asteroids[j].y ) < 30 ) {
 this.asteroids.splice(j, 1);
-image(game.zombieImage.src, 650, 120, 90, 130);
+//image(game.zombieImage.src, 650, 120, 90, 130);
 this.lives -- ; 
 document.querySelector('.lives-display').innerHTML = this.lives; 
 
@@ -91,24 +91,24 @@ document.querySelector('.lives-display').innerHTML = this.lives;
 preload() {
 this.backgroundImages = [
 
-{ src : loadImage('../img/images.backG/Purple Nebula 7 - 512x512.png'), x: 0, speed: 1},
-{ src : loadImage('../img/images.backG/Parallax60.png'), x: 0, speed: 2},
-{ src : loadImage('../img/images.backG/Starfield 3 - 512x512.png'), x: 0, speed: 4},
+{ src : loadImage('img/images.backG/Purple Nebula 7 - 512x512.png'), x: 0, speed: 1},
+{ src : loadImage('img/images.backG/Parallax60.png'), x: 0, speed: 2},
+{ src : loadImage('img/images.backG/Starfield 3 - 512x512.png'), x: 0, speed: 4},
 
 ]  
 
-this.zombieImage = { src : loadImage('../img/images.backG/zombie-space.png'), x: 0, y: 0, speed: 2},
-this.deathStar = { src : loadImage ('../img/images.backG/Daco_4681675.png'), x: 0, y: 0, width: 0, length: 0, speed: 1},
+this.zombieImage = { src : loadImage('img/images.backG/zombie-space.png'), x: 0, y: 0, speed: 2},
+this.deathStar = { src : loadImage ('img/images.backG/Daco_4681675.png'), x: 0, y: 0, width: 0, length: 0, speed: 1},
 
 
-this.laserImage = { src : loadImage ('../img/image.laser/image-229014.png'), speed: 3}
+this.laserImage = { src : loadImage ('img/image.laser/image-229014.png'), speed: 3}
 
-this.playerImage = loadImage('../img/image.player/vaisseauspatial.png')  
+this.playerImage = loadImage('img/image.player/vaisseauspatial.png')  
 
 
-this.asteroidImage = { src : loadImage ('../img/images.obst/asteroid-meteor-orangered-transp-space-stock-514777.png')}
+this.asteroidImage = { src : loadImage ('img/images.obst/asteroid-meteor-orangered-transp-space-stock-514777.png')}
 
-this.winGif = loadImage('../img/images.obst/giphycat.gif')
+this.winGif = loadImage('img/images.obst/giphycat.gif')
 }
 
 }

@@ -41,14 +41,7 @@ shoot() {
 console.log('shoot');
 game.lasers.push(new Laser(game.player))   
       
-
 }
-
-
-
-
-
-
 
 
 
