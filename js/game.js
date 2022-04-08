@@ -14,7 +14,8 @@ this.asteroids = []
 this.lasers = []
 this.score = 0;
 this.lives = 10;
-this.winGif
+this.looseImage
+this.spaceCat
 
 
 this.counterDisplay = document.querySelector('.counter-display');
@@ -28,7 +29,7 @@ this.background.draw()
 this.player.draw()
 
 // Asteroids flying by
-if (frameCount % 80 === 0) {
+if (frameCount % 60 === 0) {
     this.asteroids.push(new Asteroid(this.asteroidImage))   
 }
 
@@ -49,7 +50,12 @@ this.lasers.forEach(function (laser) {
 for ( let i=0; i < this.lasers.length; i++ ) {
 for (let j=0; j < this.asteroids.length; j++) {
 if (dist(this.lasers[i].x , this.lasers[i].y , this.asteroids[j].x , this.asteroids[j].y ) < 45 ) {
-        this.asteroids.splice(j, 1);
+    console.log(this.lasers[i].x, this.asteroids[j].x);
+    //setTimeout(() => {this.lasers.splice(i, 1)}, 500)
+    //this.lasers.splice(i, 1);    
+    this.asteroids.splice(j, 1);
+        
+        
         this.score ++;
 
         document.querySelector('.counter-display').innerHTML = this.score;  
@@ -59,16 +65,27 @@ if (dist(this.lasers[i].x , this.lasers[i].y , this.asteroids[j].x , this.astero
 }
 }
 
+this.lasers = this.lasers.filter(laser => {
+    if (laser.x > 1200) {
+        return false
+    } else {
+        return true}
+})
+
+console.log(this.lasers);
+
 // Game Won - if score > 10
 
-if (this.score > 15 ) {
+if (this.score >= 10 ) {
 
-fill(0);
-rect(280,0,800,600);
+image(this.spaceCat, 450, 0 , 400, 400)  ;
+
 fill(227, 101, 91);
 textSize(50);
 textAlign(CENTER);
-text("You Win",700, 200);
+text("You Win",200, 200);
+text("You deserve this",1100, 100);;
+text(" SpaceCat picture !!! ",1100, 200);;
 textSize(12);
 textAlign(CENTER); 
 }
@@ -84,7 +101,22 @@ document.querySelector('.lives-display').innerHTML = this.lives;
 
 }
 }
+if (this.lives <= 0) {
+image(this.looseImage, 450, 0 , 400, 400)   
+
+
+
+fill(75, 0, 130);
+textSize(60);
+textAlign(CENTER);
+text("YOU LOST ",650, 300);
+textSize(16);
+textAlign(CENTER); 
+
+
+    }
 }
+
 
 
 
@@ -108,7 +140,10 @@ this.playerImage = loadImage('img/image.player/vaisseauspatial.png')
 
 this.asteroidImage = { src : loadImage ('img/images.obst/asteroid-meteor-orangered-transp-space-stock-514777.png')}
 
-this.winGif = loadImage('img/images.obst/giphycat.gif')
+this.looseImage = loadImage('img/images.obst/youwerethechosenone.jpg')
+
+this.spaceCat = loadImage('img/images.obst/spacecat.jpg')
+
 }
 
 }

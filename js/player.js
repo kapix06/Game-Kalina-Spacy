@@ -42,46 +42,4 @@ console.log('shoot');
 game.lasers.push(new Laser(game.player))   
       
 }
-
-
-
-
-/*  
-keyPressed() {
-
- 
-if (keyCode === UP_ARROW) {
-this.y -= 5;
-}
-  
-if (keyCode === DOWN_ARROW) {
-this.y += 5;
-} 
-
-if (keyIsDown === LEFT_ARROW) {
-this.x -= 5;
-} 
-
-if (keyCode === RIGHT_ARROW) {
-this.x += 5;
-} 
-
-
-   if (keyIsDown(37)) {
-   this.x-= 50()
-   }
-    
-   if (keyIsDown(39)) {
-   this.flyRight()
-   }
-    
-   if (keyIsDown(38)) {
-   this.flyDown()
-   }
-    
-   if (keyIsDown(40)) {
-   this.flyUp()
-   }
-    
-    */
 }
